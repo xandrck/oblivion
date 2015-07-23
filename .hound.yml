@@ -1,0 +1,12 @@
+ruby:
+  enabled: true
+  config_file: .ruby-style.yml
+
+javascript:
+  enabled: true
+  config_file: .javascript-style.json
+  ignore_file: .javascript_ignore
+
+haml:
+  enabled: true
+  config_file: .haml-style.yml
