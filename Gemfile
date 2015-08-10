@@ -35,6 +35,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 gem 'devise'
+gem 'haml'
 
 gem 'therubyracer'
 gem 'less-rails-bootstrap'
@@ -48,7 +49,5 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-
-  gem 'haml'
 end
 
