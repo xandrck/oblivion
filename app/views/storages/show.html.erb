@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @storage.title %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @storage.url %>
+</p>
+
+<%= link_to 'Edit', edit_storage_path(@storage) %> |
+<%= link_to 'Back', storages_path %>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<%= link_to "Выйти", destroy_user_session_path, method: :delete %>
