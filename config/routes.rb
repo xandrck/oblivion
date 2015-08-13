@@ -3,4 +3,7 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
+  resources :storages
+  post "storages/new"    => "storages#new"
+
 end
