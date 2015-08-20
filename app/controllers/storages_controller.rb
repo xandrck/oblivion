@@ -1,15 +1,12 @@
 class StoragesController < ApplicationController
   before_action :find_storage, only: [:edit, :update, :destroy]
 
-  def new
-    @storage = Storage.new
-  end
-
   def index
     @storages = Storage.all
   end
 
-  def show
+  def new
+    @storage = Storage.new
   end
 
   def create
@@ -22,6 +19,9 @@ class StoragesController < ApplicationController
       flash[:alert] = 'Хранилище не было создано.'
       render action: :new
     end
+  end
+
+  def show
   end
 
   def edit

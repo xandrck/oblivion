@@ -1,0 +1,7 @@
+- unless notice.blank? && alert.blank?
+  .row
+    %div
+      - flash.each do |key, value|
+        %div{class: "#{flash_class(key.to_s)} text-center fade in"}
+          %a.close{"data-dismiss" => "alert", href: "#"} ×
+          = value

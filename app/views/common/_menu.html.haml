@@ -1,0 +1,14 @@
+.row
+  .col-md-10
+    %ul.nav.nav-pills
+      %li
+        = link_to 'Главная', root_path
+      %li
+        = link_to 'Список хранилищ', storages_path
+      %li
+        = link_to 'Новое хранилище', new_storage_path
+  .col-md-2
+    .pull-left
+      = "Вы вошли как: <b>#{current_user.full_name}</B>".html_safe
+    .pull-right
+      = link_to 'Выйти', destroy_user_session_path, method: :delete

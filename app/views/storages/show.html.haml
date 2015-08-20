@@ -1,11 +1,7 @@
-%h1 Список хранилищ
+.col-md-4.col-md-offset-4
+  .text-center
+    %h3 Хранилище #{@storage.title}
 
-%p
-  %strong Title:
-  = @storage.title
-%p
-  %strong Url:
-  = @storage.url
-
-%br
-= link_to "Выйти", destroy_user_session_path, method: :delete
+    %p
+      %strong Url:
+      = @storage.url

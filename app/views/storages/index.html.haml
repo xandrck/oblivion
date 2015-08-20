@@ -1,0 +1,12 @@
+.col-md-4.col-md-offset-4
+  .text-center
+    %h3 Список хранилищ
+.col-md-12
+  %table.table.table-striped.table-hover
+    %thead
+      %tr
+        %th.col-md-4 Название
+        %th.col-md-6 Ссылка
+        %th.col-md-2 Операции
+    %tbody
+      = render partial: 'table', collection: @storages, as: :storage
