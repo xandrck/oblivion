@@ -1,0 +1,17 @@
+%h1 Новое хранилище
+
+= form_for :storage do |f|
+  %p= f.label :title
+  %p= f.text_field :title
+  %br
+
+  %p= f.label :url
+  %p= f.text_area :url
+
+  %p= f.submit
+
+%br
+= link_to "Назад", root_path
+
+%br
+= link_to "Выйти", destroy_user_session_path, method: :delete
