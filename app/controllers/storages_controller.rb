@@ -1,5 +1,4 @@
 class StoragesController < ApplicationController
-
   before_action :find_storage, only: [:edit, :update, :destroy]
 
   def new
