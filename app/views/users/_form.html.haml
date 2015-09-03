@@ -1,0 +1,17 @@
+.col-md-4.col-md-offset-4
+  .text-center
+    %h3
+      - if params[:action] == 'new' || params[:action] == 'create'
+        Имя пользователя
+      - elsif params[:action] == 'edit' || params[:action] == 'update'
+        = "Редактировать <b>#{current_user.full_name}</b>".html_safe
+
+  = simple_form_for @user, :url => @user.id.present? ? user_path : users_path do |f|
+    .form-group
+      = f.text_field :full_name, placeholder: 'Имя', class: 'form-control'
+    .form-group.col-md-12
+      .controls.text-center
+        - if params[:action] == 'edit' || params[:action] == 'update'
+          = f.submit 'Обновить', class: 'btn btn-warning'
+        - else
+          = f.submit 'Создать', class: 'btn btn-success'

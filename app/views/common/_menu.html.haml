@@ -7,6 +7,8 @@
         = link_to 'Список хранилищ', storages_path
       %li
         = link_to 'Новое хранилище', new_storage_path
+      %li
+        = link_to 'Настройки', users_path
   .col-md-2
     .pull-left
       = "Вы вошли как: <b>#{current_user.full_name}</B>".html_safe
