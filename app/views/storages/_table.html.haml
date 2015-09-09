@@ -1,6 +1,7 @@
 %tr
   %td #{storage.title}
-  %td #{storage.url}
+  %td
+    = link_to "#{storage.url}", storage.url, target: '_blank'
   %td
     = link_to 'Редактировать', edit_storage_path(storage), class: 'btn btn-xs btn-warning'
     = link_to 'Удалить', storage_path(storage), method: :delete, class: 'btn btn-xs btn-danger', data: { confirm: "Удалить хранилище #{storage.title}?" }
