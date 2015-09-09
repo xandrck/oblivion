@@ -1,5 +1,5 @@
 class StoragesController < ApplicationController
-  before_action :find_storage, only: [:edit, :update, :destroy]
+  before_action :find_storage, only: [:show, :edit, :update, :destroy]
 
   def index
     @storages = Storage.all
@@ -43,6 +43,7 @@ class StoragesController < ApplicationController
     else
       flash[:alert] = 'Хранилище не было удалено.'
     end
+    redirect_to storages_path
   end
 
   private
