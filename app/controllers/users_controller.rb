@@ -1,20 +1,18 @@
 class UsersController < ApplicationController
 
-  def index
-    @users = User.all
-  end
-
-  def update
-    @user = User.find(params[:id])
-
-    @user.update(user_params)
-  end
-
   def show
   end
 
   def edit
-    @user = User.find(params[:id])
+  end
+
+  def update
+    if current_user.update(user_params)
+      flash[:notice] = 'Данный пользователя успешно обновлены.'
+      redirect_to root_path
+    else
+      render :edit
+    end
   end
 
   private
@@ -22,9 +20,4 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:full_name)
     end
-
-    def find_user
-      @user = Full_name.where(id: params[:id]).first
-    end
 end
-
