@@ -1,5 +1,5 @@
+# encoding: UTF-8
 source 'https://rubygems.org'
-
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
@@ -53,5 +53,7 @@ group :development, :test do
 
   gem 'rspec-rails', '~> 3.0'
   gem 'quiet_assets'
-end
 
+  # Checking code style
+  gem 'rubocop', require: false
+end
