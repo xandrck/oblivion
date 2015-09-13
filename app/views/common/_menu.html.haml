@@ -11,12 +11,12 @@
             = link_to 'Новое хранилище', new_storage_path
       .col-md-3
         .dropdown
-          %button.btn.btn-default.dropdown-toggle{'type' => 'button', 'id' => 'dropdownMenu1', 'data-toggle' => 'dropdown', 'aria-haspopup' => 'true', 'aria-expanded' => 'true'}
+          %button.btn.btn-default.dropdown-toggle{ 'type' => 'button', 'id' => 'dropdownMenu1', 'data-toggle' => 'dropdown', 'aria-haspopup' => 'true', 'aria-expanded' => 'true' }
             = current_user.full_name
             %span.caret
-          %ul.dropdown-menu{'aria-labelledby' => 'dropdownMenu3'}
+          %ul.dropdown-menu{ 'aria-labelledby' => 'dropdownMenu3' }
             %li
               = link_to 'Настройки', edit_user_path(current_user)
-            %li.divider{'role' => 'separator'}
+            %li.divider{ 'role' => 'separator' }
             %li
               = link_to 'Выйти', destroy_user_session_path, data: { confirm: 'Вы действительно хотите выйти?' }, method: :delete
