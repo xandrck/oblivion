@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class StoragesController < ApplicationController
   before_action :find_storage, only: [:show, :edit, :update, :destroy]
 
@@ -48,11 +49,11 @@ class StoragesController < ApplicationController
 
   private
 
-    def storage_params
-      params.require(:storage).permit(:title, :url)
-    end
+  def storage_params
+    params.require(:storage).permit(:title, :url)
+  end
 
-    def find_storage
-      @storage = Storage.where(id: params[:id]).first
-    end
+  def find_storage
+    @storage = Storage.where(id: params[:id]).first
+  end
 end

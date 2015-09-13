@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class Storage < ActiveRecord::Base
   belongs_to :user
 

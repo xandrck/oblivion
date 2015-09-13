@@ -1,0 +1,13 @@
+inherit_from: .ruby-style.yml
+
+AllCops:
+  Exclude:
+    - 'vendor/**/*'
+    - 'spec/fixtures/**/*'
+    - 'test/**/*'
+    - 'config/**/*'
+    - 'db/**/*'
+    - 'bin/*'
+
+Style/Encoding:
+  Enabled: true

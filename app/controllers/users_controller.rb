@@ -1,5 +1,5 @@
+# encoding: UTF-8
 class UsersController < ApplicationController
-
   def show
   end
 
@@ -17,7 +17,7 @@ class UsersController < ApplicationController
 
   private
 
-    def user_params
-      params.require(:user).permit(:full_name)
-    end
+  def user_params
+    params.require(:user).permit(:full_name)
+  end
 end
