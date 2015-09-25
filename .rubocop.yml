@@ -8,6 +8,3 @@ AllCops:
     - 'config/**/*'
     - 'db/**/*'
     - 'bin/*'
-
-Style/Encoding:
-  Enabled: true

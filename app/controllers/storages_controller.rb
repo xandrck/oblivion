@@ -1,4 +1,3 @@
-# encoding: UTF-8
 class StoragesController < ApplicationController
   before_action :find_storage, only: [:show, :edit, :update, :destroy]
 
