@@ -9,6 +9,17 @@
             = link_to 'Список хранилищ', storages_path
           %li
             = link_to 'Новое хранилище', new_storage_path
+          %li
+            .dropdown
+              %button.btn.btn-default.dropdown-toggle{ 'type' => 'button', 'id' => 'dropdownMenu1', 'data-toggle' => 'dropdown', 'aria-haspopup' => 'true', 'aria-expanded' => 'true' }
+                Группы закладок
+                %span.caret
+              %ul.dropdown-menu{ 'aria-labelledby' => 'dropdownMenu3' }
+                %li
+                  = link_to 'Список групп закладок', bookmark_groups_path
+                %li.divider{ 'role' => 'separator' }
+                %li
+                  = link_to 'Создать новую группу закладок', new_bookmark_group_path
       .col-md-3
         .dropdown
           %button.btn.btn-default.dropdown-toggle{ 'type' => 'button', 'id' => 'dropdownMenu1', 'data-toggle' => 'dropdown', 'aria-haspopup' => 'true', 'aria-expanded' => 'true' }

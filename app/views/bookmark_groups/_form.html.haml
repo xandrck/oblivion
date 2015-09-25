@@ -1,0 +1,17 @@
+.col-md-4.col-md-offset-4
+  .text-center
+    %h3
+      - if params[:action] == 'new' || params[:action] == 'create'
+        Новая группа закладок
+      - elsif params[:action] == 'edit' || params[:action] == 'update'
+        = "Редактировать <b>#{@bookmark_group.name}</b>".html_safe
+
+  = simple_form_for @bookmark_group, :url => @bookmark_group.id.present? ? bookmark_group_path : bookmark_groups_path do |f|
+    .form-group
+      = f.text_field :name, placeholder: 'Название', class: 'form-control'
+    .form-group.col-md-12
+      .controls.text-center
+        - if params[:action] == 'edit' || params[:action] == 'update'
+          = f.submit 'Обновить', class: 'btn btn-warning'
+        - else
+          = f.submit 'Создать', class: 'btn btn-success'

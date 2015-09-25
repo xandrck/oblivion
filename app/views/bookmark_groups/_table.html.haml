@@ -1,0 +1,5 @@
+%tr
+  %td #{bookmark_group.name}
+  %td
+    = link_to 'Редактировать', edit_bookmark_group_path(bookmark_group), class: 'btn btn-xs btn-warning'
+    = link_to 'Удалить', bookmark_groups_path(bookmark_group), method: :delete, class: 'btn btn-xs btn-danger', data: { confirm: "Удалить хранилище #{bookmark_group.name}?" }
