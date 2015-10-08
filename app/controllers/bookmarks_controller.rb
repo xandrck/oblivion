@@ -1,6 +1,6 @@
 class BookmarksController < ApplicationController
   before_action :find_bookmark, only: [:edit, :update, :destroy]
-  before_action :find_bookmark_groups, only: [:index, :new, :edit]
+  before_action :find_bookmark_groups, only: [:index, :new, :create, :edit, :update]
 
   def index
     @bookmarks = Bookmark.where(bookmark_groups_id: @bookmark_groups.ids)

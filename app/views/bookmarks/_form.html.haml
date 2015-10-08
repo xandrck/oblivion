@@ -12,7 +12,7 @@
     .form-group
       = f.text_field :href, placeholder: 'Ссылка', class: 'form-control'
     .form-group
-      = f.input :bookmark_groups_id, collection: @bookmark_groups,  selected: @bookmark_groups.first, class: 'form-control'
+      = f.input :bookmark_groups_id, collection: @bookmark_groups, selected: @bookmark_groups.first, class: 'form-control'
     .form-group.col-md-12
       .controls.text-center
         - if params[:action] == 'edit' || params[:action] == 'update'
