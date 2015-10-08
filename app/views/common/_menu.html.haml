@@ -6,10 +6,6 @@
           %li
             = link_to 'Главная', root_path
           %li
-            = link_to 'Список хранилищ', storages_path
-          %li
-            = link_to 'Новое хранилище', new_storage_path
-          %li
             .dropdown
               %button.btn.btn-default.dropdown-toggle{ 'type' => 'button', 'id' => 'dropdownMenu1', 'data-toggle' => 'dropdown', 'aria-haspopup' => 'true', 'aria-expanded' => 'true' }
                 Группы закладок
@@ -17,9 +13,18 @@
               %ul.dropdown-menu{ 'aria-labelledby' => 'dropdownMenu3' }
                 %li
                   = link_to 'Список групп закладок', bookmark_groups_path
-                %li.divider{ 'role' => 'separator' }
                 %li
                   = link_to 'Создать новую группу закладок', new_bookmark_group_path
+          %li
+            .dropdown
+              %button.btn.btn-default.dropdown-toggle{ 'type' => 'button', 'id' => 'dropdownMenu1', 'data-toggle' => 'dropdown', 'aria-haspopup' => 'true', 'aria-expanded' => 'true' }
+                Закладки
+                %span.caret
+              %ul.dropdown-menu{ 'aria-labelledby' => 'dropdownMenu3' }
+                %li
+                  = link_to 'Список закладок', bookmarks_path
+                %li
+                  = link_to 'Создать новую закладку', new_bookmark_path if current_user.bookmark_groups.present?
       .col-md-3
         .dropdown
           %button.btn.btn-default.dropdown-toggle{ 'type' => 'button', 'id' => 'dropdownMenu1', 'data-toggle' => 'dropdown', 'aria-haspopup' => 'true', 'aria-expanded' => 'true' }
