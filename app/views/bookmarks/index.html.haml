@@ -1,0 +1,12 @@
+.col-md-4.col-md-offset-4
+  .text-center
+    %h3 Список закладок
+.col-md-12
+  %table.table.table-striped.table-hover
+    %thead
+      %tr
+        %th.col-md-4 Название
+        %th.col-md-4 Группа
+        %th.col-md-4 Операции
+    %tbody
+      = render partial: 'table', collection: @bookmarks, as: :bookmark
