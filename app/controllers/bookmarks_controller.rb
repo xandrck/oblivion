@@ -15,13 +15,13 @@ class BookmarksController < ApplicationController
     bookmark_group = BookmarkGroup.where(id: bookmark_params[:bookmark_group_id]).first
 
     if bookmark_group.nil?
-      flash[:alert] = 'Неверная группа закладок.'
+      flash[:alert] = 'Wrong bookmark group.'
       render action: :new
     elsif @bookmark.save
-      flash[:notice] = 'Закладка успешно создана.'
+      flash[:notice] = 'Bookmark was successfully created.'
       redirect_to bookmarks_path
     else
-      flash[:alert] = 'Закладка не была создана.'
+      flash[:alert] = 'Bookmark was not created.'
       render action: :new
     end
   end
@@ -31,19 +31,19 @@ class BookmarksController < ApplicationController
 
   def update
     if @bookmark.update_attributes(bookmark_params)
-      flash[:notice] = 'Закладка успешно обновлена.'
+      flash[:notice] = 'Bookmark was successfully updated.'
       redirect_to bookmarks_path
     else
-      flash[:alert] = 'Закладка не была обновлена.'
+      flash[:alert] = 'Bookmark was not updated.'
       render action: :edit
     end
   end
 
   def destroy
     if @bookmark.destroy
-      flash[:notice] = 'Закладка успешно удалена.'
+      flash[:notice] = 'Bookmark was successfully removed.'
     else
-      flash[:alert] = 'Закладка не была удалена.'
+      flash[:alert] = 'Bookmark was not removed.'
     end
     redirect_to bookmarks_path
   end

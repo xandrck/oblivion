@@ -4,17 +4,17 @@
       .col-md-9
         %ul.nav.navbar-nav
           %li
-            = link_to 'Главная', root_path
+            = link_to 'Home', root_path
           %li
             .dropdown
               %button.btn.btn-default.dropdown-toggle{ 'type' => 'button', 'id' => 'dropdownMenu1', 'data-toggle' => 'dropdown', 'aria-haspopup' => 'true', 'aria-expanded' => 'true' }
-                Группы закладок
+                Bookmark groups
                 %span.caret
               %ul.dropdown-menu{ 'aria-labelledby' => 'dropdownMenu3' }
                 %li
-                  = link_to 'Список групп закладок', bookmark_groups_path
+                  = link_to 'Bookmark groups list', bookmark_groups_path
                 %li
-                  = link_to 'Создать новую группу закладок', new_bookmark_group_path
+                  = link_to 'Create bookmark group', new_bookmark_group_path
           %li
             .dropdown
               %button.btn.btn-default.dropdown-toggle{ 'type' => 'button', 'id' => 'dropdownMenu1', 'data-toggle' => 'dropdown', 'aria-haspopup' => 'true', 'aria-expanded' => 'true' }
@@ -22,9 +22,9 @@
                 %span.caret
               %ul.dropdown-menu{ 'aria-labelledby' => 'dropdownMenu3' }
                 %li
-                  = link_to 'Список закладок', bookmarks_path
+                  = link_to 'Bookmarks list', bookmarks_path
                 %li
-                  = link_to 'Создать новую закладку', new_bookmark_path if current_user.bookmark_groups.present?
+                  = link_to 'Create bookmark', new_bookmark_path if current_user.bookmark_groups.present?
       .col-md-3
         .dropdown
           %button.btn.btn-default.dropdown-toggle{ 'type' => 'button', 'id' => 'dropdownMenu1', 'data-toggle' => 'dropdown', 'aria-haspopup' => 'true', 'aria-expanded' => 'true' }
@@ -32,7 +32,7 @@
             %span.caret
           %ul.dropdown-menu{ 'aria-labelledby' => 'dropdownMenu3' }
             %li
-              = link_to 'Настройки', edit_user_path(current_user)
+              = link_to 'Settings', edit_user_path(current_user)
             %li.divider{ 'role' => 'separator' }
             %li
-              = link_to 'Выйти', destroy_user_session_path, data: { confirm: 'Вы действительно хотите выйти?' }, method: :delete
+              = link_to 'Log out', destroy_user_session_path, data: { confirm: 'Are you sure want to log out?' }, method: :delete
