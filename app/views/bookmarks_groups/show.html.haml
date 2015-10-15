@@ -5,11 +5,15 @@
   %table.table.table-striped.table-hover
     %thead
       %tr
-        %th.col-md-4 Name
-        %th.col-md-4 Bookmarks Group Name
+        %th.col-md-8 Name
         %th.col-md-4 Action
     %tbody
       - @bookmarks.each do |bookmark|
-        = render partial: 'bookmarks/table', locals: { bookmark: bookmark }
+        %tr
+          %td
+            = link_to bookmark.name, bookmark.href
+          %td
+            = link_to 'Edit', edit_bookmark_path(bookmark), class: 'btn btn-xs btn-warning'
+            = link_to 'Delete', bookmark_path(bookmark), method: :delete, class: 'btn btn-xs btn-danger', data: { confirm: "Delete bookmark #{bookmark.name}?" }
       %tr
-        = link_to 'New Bookmark', new_bookmark_path, class: 'btn btn-xs btn-primary'
+        = link_to 'Add new Bookmark', new_bookmark_path, class: 'btn btn-xs btn-primary'

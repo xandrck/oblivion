@@ -9,4 +9,12 @@
         %th.col-md-4 Bookmarks Group Name
         %th.col-md-4 Action
     %tbody
-      = render partial: 'table', collection: @bookmarks, as: :bookmark
+      - @bookmarks.each do |bookmark|
+        %tr
+          %td
+            = link_to bookmark.name, bookmark.href
+          %td
+            = group_name(bookmark.bookmarks_group_id)
+          %td
+            = link_to 'Edit', edit_bookmark_path(bookmark), class: 'btn btn-xs btn-warning'
+            = link_to 'Delete', bookmark_path(bookmark), method: :delete, class: 'btn btn-xs btn-danger', data: { confirm: "Delete bookmark #{bookmark.name}?" }
