@@ -13,10 +13,10 @@ class BookmarkGroupsController < ApplicationController
     @bookmark_group = current_user.bookmark_groups.build(bookmark_group_params)
 
     if @bookmark_group.save
-      flash[:notice] = 'Группа закладок успешно создана.'
+      flash[:notice] = 'Bookmark group was successfully created.'
       redirect_to bookmark_groups_path
     else
-      flash[:alert] = 'Группа закладок не была создана.'
+      flash[:alert] = 'Bookmark group was not created.'
       render action: :new
     end
   end
@@ -26,19 +26,19 @@ class BookmarkGroupsController < ApplicationController
 
   def update
     if @bookmark_group.update_attributes(bookmark_group_params)
-      flash[:notice] = 'Группа закладок успешно обновлена.'
+      flash[:notice] = 'Bookmark group was successfully updated.'
       redirect_to bookmark_groups_path
     else
-      flash[:alert] = 'Группа закладок не была обновлена.'
+      flash[:alert] = 'Bookmark group was not updated.'
       render action: :edit
     end
   end
 
   def destroy
     if @bookmark_group.destroy
-      flash[:notice] = 'Группа закладок успешно удалена.'
+      flash[:notice] = 'Bookmark group was successfully removed.'
     else
-      flash[:alert] = 'Группа закладок не была удалена.'
+      flash[:alert] = 'Bookmark group was not removed.'
     end
     redirect_to bookmark_groups_path
   end

@@ -2,20 +2,20 @@
   .text-center
     %h3
       - if params[:action] == 'new' || params[:action] == 'create'
-        Новая закладка
+        New bookmark
       - elsif params[:action] == 'edit' || params[:action] == 'update'
-        = "Редактировать <b>#{@bookmark.name}</b>".html_safe
+        = "Edit <b>#{@bookmark.name}</b>".html_safe
 
   = simple_form_for @bookmark, :url => @bookmark.id.present? ? bookmark_path : bookmarks_path do |f|
     .form-group
-      = f.text_field :name, placeholder: 'Название', class: 'form-control', required: true
+      = f.text_field :name, placeholder: :name, class: 'form-control', required: true
     .form-group
-      = f.text_field :href, placeholder: 'Ссылка', class: 'form-control'
+      = f.text_field :href, placeholder: :href, class: 'form-control'
     .form-group
       = f.input :bookmark_group_id, collection: @bookmark_groups, selected: @bookmark_groups.first, class: 'form-control'
     .form-group.col-md-12
       .controls.text-center
         - if params[:action] == 'edit' || params[:action] == 'update'
-          = f.submit 'Обновить', class: 'btn btn-warning'
+          = f.submit 'Update', class: 'btn btn-warning'
         - else
-          = f.submit 'Создать', class: 'btn btn-success'
+          = f.submit 'Create', class: 'btn btn-success'
