@@ -1,4 +1,4 @@
-class BookmarkGroup < ActiveRecord::Base
+class BookmarksGroup < ActiveRecord::Base
   has_many :bookmarks, dependent: :destroy
   belongs_to :user
 end

@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   resources :storages
   resources :users
   resources :bookmarks
-  resources :bookmark_groups
+  resources :bookmarks_groups
 end

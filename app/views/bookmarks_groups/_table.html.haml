@@ -1,0 +1,5 @@
+%tr
+  %td #{bookmarks_group.name}
+  %td
+    = link_to 'Edit', edit_bookmarks_group_path(bookmarks_group), class: 'btn btn-xs btn-warning'
+    = link_to 'Delete', bookmarks_group_path(bookmarks_group), method: :delete, class: 'btn btn-xs btn-danger', data: { confirm: "Delete bookmarks group #{bookmarks_group.name}?" }
