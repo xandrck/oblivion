@@ -5,7 +5,7 @@ class CreateBookmarks < ActiveRecord::Migration
       t.text :href
       t.text :icon
       t.string :path
-      t.belongs_to :bookmark_groups
+      t.belongs_to :bookmark_group
 
       t.timestamps null: false
     end

@@ -3,7 +3,7 @@ class BookmarksController < ApplicationController
   before_action :find_bookmark_groups, only: [:index, :new, :create, :edit, :update]
 
   def index
-    @bookmarks = Bookmark.where(bookmark_groups_id: @bookmark_groups.ids)
+    @bookmarks = Bookmark.where(bookmark_group_id: @bookmark_groups.ids)
   end
 
   def new
@@ -12,7 +12,7 @@ class BookmarksController < ApplicationController
 
   def create
     @bookmark = Bookmark.new(bookmark_params)
-    bookmark_group = BookmarkGroup.where(id: bookmark_params[:bookmark_groups_id]).first
+    bookmark_group = BookmarkGroup.where(id: bookmark_params[:bookmark_group_id]).first
 
     if bookmark_group.nil?
       flash[:alert] = 'Неверная группа закладок.'
@@ -59,6 +59,6 @@ class BookmarksController < ApplicationController
   end
 
   def bookmark_params
-    params.require(:bookmark).permit(:name, :href, :bookmark_groups_id)
+    params.require(:bookmark).permit(:name, :href, :bookmark_group_id)
   end
 end
