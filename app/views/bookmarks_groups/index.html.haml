@@ -1,6 +1,6 @@
 .col-md-4.col-md-offset-4
   .text-center
-    %h3 Bookmark groups list
+    %h3 Bookmarks groups list
 .col-md-12
   %table.table.table-striped.table-hover
     %thead
@@ -8,4 +8,4 @@
         %th.col-md-4 Name
         %th.col-md-2 Action
     %tbody
-      = render partial: 'table', collection: @bookmark_groups, as: :bookmark_group
+      = render partial: 'table', collection: @bookmarks_groups, as: :bookmarks_group

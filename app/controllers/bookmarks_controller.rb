@@ -1,9 +1,9 @@
 class BookmarksController < ApplicationController
   before_action :find_bookmark, only: [:edit, :update, :destroy]
-  before_action :find_bookmark_groups, only: [:index, :new, :create, :edit, :update]
+  before_action :find_bookmarks_groups, only: [:index, :new, :create, :edit, :update]
 
   def index
-    @bookmarks = Bookmark.where(bookmark_group_id: @bookmark_groups.ids)
+    @bookmarks = Bookmark.where(bookmarks_group_id: @bookmarks_groups.ids)
   end
 
   def new
@@ -12,10 +12,10 @@ class BookmarksController < ApplicationController
 
   def create
     @bookmark = Bookmark.new(bookmark_params)
-    bookmark_group = BookmarkGroup.where(id: bookmark_params[:bookmark_group_id]).first
+    bookmarks_group = BookmarksGroup.where(id: bookmark_params[:bookmarks_group_id]).first
 
-    if bookmark_group.nil?
-      flash[:alert] = 'Wrong bookmark group.'
+    if bookmarks_group.nil?
+      flash[:alert] = 'Wrong bookmarks group.'
       render action: :new
     elsif @bookmark.save
       flash[:notice] = 'Bookmark was successfully created.'
@@ -54,11 +54,11 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.where(id: params[:id]).first
   end
 
-  def find_bookmark_groups
-    @bookmark_groups = current_user.bookmark_groups
+  def find_bookmarks_groups
+    @bookmarks_groups = current_user.bookmarks_groups
   end
 
   def bookmark_params
-    params.require(:bookmark).permit(:name, :href, :bookmark_group_id)
+    params.require(:bookmark).permit(:name, :href, :bookmarks_group_id)
   end
 end

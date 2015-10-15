@@ -8,23 +8,23 @@
           %li
             .dropdown
               %button.btn.btn-default.dropdown-toggle{ 'type' => 'button', 'id' => 'dropdownMenu1', 'data-toggle' => 'dropdown', 'aria-haspopup' => 'true', 'aria-expanded' => 'true' }
-                Bookmark groups
+                Bookmarks groups
                 %span.caret
               %ul.dropdown-menu{ 'aria-labelledby' => 'dropdownMenu3' }
                 %li
-                  = link_to 'Bookmark groups list', bookmark_groups_path
+                  = link_to 'Bookmarks groups list', bookmarks_groups_path
                 %li
-                  = link_to 'Create bookmark group', new_bookmark_group_path
+                  = link_to 'Create bookmarks group', new_bookmarks_group_path
           %li
             .dropdown
               %button.btn.btn-default.dropdown-toggle{ 'type' => 'button', 'id' => 'dropdownMenu1', 'data-toggle' => 'dropdown', 'aria-haspopup' => 'true', 'aria-expanded' => 'true' }
-                Закладки
+                Bookmarks
                 %span.caret
               %ul.dropdown-menu{ 'aria-labelledby' => 'dropdownMenu3' }
                 %li
                   = link_to 'Bookmarks list', bookmarks_path
                 %li
-                  = link_to 'Create bookmark', new_bookmark_path if current_user.bookmark_groups.present?
+                  = link_to 'Create bookmark', new_bookmark_path if current_user.bookmarks_groups.present?
       .col-md-3
         .dropdown
           %button.btn.btn-default.dropdown-toggle{ 'type' => 'button', 'id' => 'dropdownMenu1', 'data-toggle' => 'dropdown', 'aria-haspopup' => 'true', 'aria-expanded' => 'true' }

@@ -2,11 +2,11 @@
   .text-center
     %h3
       - if params[:action] == 'new' || params[:action] == 'create'
-        New bookmark group
+        New bookmarks group
       - elsif params[:action] == 'edit' || params[:action] == 'update'
-        = "Edit <b>#{@bookmark_group.name}</b>".html_safe
+        = "Edit <b>#{@bookmarks_group.name}</b>".html_safe
 
-  = simple_form_for @bookmark_group, :url => @bookmark_group.id.present? ? bookmark_group_path : bookmark_groups_path do |f|
+  = simple_form_for @bookmarks_group, :url => @bookmarks_group.id.present? ? bookmarks_group_path : bookmarks_groups_path do |f|
     .form-group
       = f.text_field :name, placeholder: :name, class: 'form-control'
     .form-group.col-md-12
