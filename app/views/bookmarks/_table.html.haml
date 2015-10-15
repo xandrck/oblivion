@@ -1,6 +1,6 @@
 %tr
   %td #{bookmark.name}
-  %td #{group_name(bookmark.bookmark_groups_id)}
+  %td #{group_name(bookmark.bookmark_group_id)}
   %td
     = link_to 'Редактировать', edit_bookmark_path(bookmark), class: 'btn btn-xs btn-warning'
     = link_to 'Удалить', bookmark_path(bookmark), method: :delete, class: 'btn btn-xs btn-danger', data: { confirm: "Удалить закладку #{bookmark.name}?" }
