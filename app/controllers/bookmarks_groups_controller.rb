@@ -1,5 +1,5 @@
 class BookmarksGroupsController < ApplicationController
-  before_action :find_bookmarks_group, only: [:edit, :update, :destroy]
+  before_action :find_bookmarks_group, only: [:show, :edit, :update, :destroy]
 
   def index
     @bookmarks_groups = current_user.bookmarks_groups
@@ -19,6 +19,10 @@ class BookmarksGroupsController < ApplicationController
       flash[:alert] = 'Bookmarks group was not created.'
       render action: :new
     end
+  end
+
+  def show
+    @bookmarks = @bookmarks_group.bookmarks
   end
 
   def edit
