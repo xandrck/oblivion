@@ -19,5 +19,4 @@
 # Ignore IDE
 /.idea
 
-/db/schema.rb
 config/database.yml
