@@ -5,6 +5,4 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :bookmarks_groups
-
-  validates_presence_of :full_name
 end
