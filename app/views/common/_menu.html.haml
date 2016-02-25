@@ -17,7 +17,7 @@
                   = link_to 'Create bookmarks group', new_bookmarks_group_path
           %li
             .dropdown
-              %button.btn.btn-default.dropdown-toggle{ 'type' => 'button', 'id' => 'dropdownMenu1', 'data-toggle' => 'dropdown', 'aria-haspopup' => 'true', 'aria-expanded' => 'true' }
+              %button.btn.btn-default.dropdown-toggle{ 'type' => 'button', 'id' => 'dropdownMenu1', 'data-toggle' => 'dropdown' }
                 Bookmarks
                 %span.caret
               %ul.dropdown-menu{ 'aria-labelledby' => 'dropdownMenu3' }
@@ -28,7 +28,7 @@
       .col-md-3
         .dropdown
           %button.btn.btn-default.dropdown-toggle{ 'type' => 'button', 'id' => 'dropdownMenu1', 'data-toggle' => 'dropdown', 'aria-haspopup' => 'true', 'aria-expanded' => 'true' }
-            = current_user.full_name
+            = user_name(current_user)
             %span.caret
           %ul.dropdown-menu{ 'aria-labelledby' => 'dropdownMenu3' }
             %li

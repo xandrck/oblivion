@@ -2,18 +2,18 @@
   .text-center
     %h3
       - if params[:action] == 'new' || params[:action] == 'create'
-        Новое хранилище
+        New Storage
       - elsif params[:action] == 'edit' || params[:action] == 'update'
-        = "Редактировать <b>#{@storage.title}</b>".html_safe
+        = "Edit <b>#{@storage.title}</b>".html_safe
 
   = simple_form_for @storage, :url => @storage.id.present? ? storage_path : storages_path do |f|
     .form-group
-      = f.text_field :title, placeholder: 'Название', class: 'form-control'
+      = f.text_field :title, placeholder: 'Name', class: 'form-control'
     .form-group
-      = f.text_area :url, placeholder: 'Ссылка', class: 'form-control'
+      = f.text_area :url, placeholder: 'URL', class: 'form-control'
     .form-group.col-md-12
       .controls.text-center
         - if params[:action] == 'edit' || params[:action] == 'update'
-          = f.submit 'Обновить', class: 'btn btn-warning'
+          = f.submit 'Refresh', class: 'btn btn-warning'
         - else
-          = f.submit 'Создать', class: 'btn btn-success'
+          = f.submit 'Create', class: 'btn btn-success'
