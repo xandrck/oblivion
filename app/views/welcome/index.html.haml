@@ -2,3 +2,7 @@
   .col-md-12
     %h1.page-header.text-center
       Welcome!
+    = form_for users_path do |f|
+
+      = f.file_field(:method => "get")
+      = f.submit 'Add bookmarcs file', class: 'btn btn-primary'
