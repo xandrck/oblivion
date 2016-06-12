@@ -47,6 +47,11 @@ class BookmarksGroupsController < ApplicationController
     redirect_to bookmarks_groups_path
   end
 
+
+  def upload
+
+
+  end
   private
 
   def find_bookmarks_group
