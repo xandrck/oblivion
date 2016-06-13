@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   resources :users
   resources :bookmarks
   resources :bookmarks_groups
+
+  get 'upload' => 'bookmarks_groups#upload'
 end

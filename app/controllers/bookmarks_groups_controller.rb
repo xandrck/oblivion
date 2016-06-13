@@ -47,11 +47,12 @@ class BookmarksGroupsController < ApplicationController
     redirect_to bookmarks_groups_path
   end
 
-
   def upload
-
-
+    if
+      @bookmarks = File.open(__FILE__)
+    end
   end
+
   private
 
   def find_bookmarks_group
