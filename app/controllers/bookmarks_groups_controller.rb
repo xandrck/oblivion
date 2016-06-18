@@ -48,10 +48,12 @@ class BookmarksGroupsController < ApplicationController
   end
 
   def upload
-    if
-      @bookmarks = File.open(__FILE__)
+    require 'nokogiri'
+    doc = Nokogiri::HTML('bookmark_file')
+    i = doc.css("a")
+    puts i[0].text
     end
-  end
+
 
   private
 
