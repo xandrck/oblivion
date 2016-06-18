@@ -47,6 +47,14 @@ class BookmarksGroupsController < ApplicationController
     redirect_to bookmarks_groups_path
   end
 
+  def upload
+    require 'nokogiri'
+    doc = Nokogiri::HTML('bookmark_file')
+    i = doc.css("a")
+    puts i[0].text
+    end
+
+
   private
 
   def find_bookmarks_group
