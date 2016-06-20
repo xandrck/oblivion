@@ -36,7 +36,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'haml'
 gem 'simple_form'
-
+gem 'nokogiri'
 gem 'therubyracer'
 gem 'less-rails-bootstrap'
 

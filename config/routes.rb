@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   resources :storages
   resources :users
   resources :bookmarks
-  resources :bookmarks_groups do
-  post 'upload' => 'bookmarks_group#upload'
-    end
+  resources :bookmarks_groups
+
+  get 'new_upload' => 'bookmarks_groups#new_upload'
+  post 'upload' => 'bookmarks_groups#upload'
 end

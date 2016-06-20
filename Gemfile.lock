@@ -215,6 +215,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   less-rails-bootstrap
+  nokogiri
   pg
   quiet_assets
   rails (= 4.2.3)
@@ -230,4 +231,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.10.5
+   1.11.2

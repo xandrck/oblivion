@@ -47,13 +47,24 @@ class BookmarksGroupsController < ApplicationController
     redirect_to bookmarks_groups_path
   end
 
-  def upload
-    require 'nokogiri'
-    doc = Nokogiri::HTML('bookmark_file')
-    i = doc.css("a")
-    puts i[0].text
-    end
+  def new_upload
+    @bookmarks_group = BookmarksGroup.new
+  end
 
+  def upload
+    @bookmarks_group
+    doc = Nokogiri::HTML(params[:bookmark_file])
+    li = []
+    #links = doc.at_css "A:href"
+    #puts links.length   # => 6
+    doc.xpath('body//dl//dt//dl//dt/a').each do |link|
+      li = link.content
+    end
+     # l = f.css['href']
+    #puts l
+    raise
+   redirect_to bookmarks_groups_path
+  end
 
   private
 
