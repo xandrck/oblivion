@@ -11,3 +11,5 @@
     %tbody
       - @bookmarks.each do |bookmark|
         = render partial: 'bookmarks/table', locals: { bookmark: bookmark }
+      %tr
+        = link_to 'New Bookmark', new_bookmark_path, class: 'btn btn-xs btn-primary'
