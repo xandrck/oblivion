@@ -1,5 +1,6 @@
 %tr
-  %td #{bookmark.name}
+  %td
+    = link_to bookmark.name, bookmark.href, target: '_blank'
   %td #{group_name(bookmark.bookmarks_group_id)}
   %td
     = link_to 'Edit', edit_bookmark_path(bookmark), class: 'btn btn-xs btn-warning'
