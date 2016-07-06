@@ -1,0 +1,13 @@
+.modal.fade{:id => "modal_#{bookmarks_group.id}"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{'aria-hidden' => 'true', 'data-dismiss' => 'modal', type: 'button'} &times;
+      .modal-body
+        .h4 Please, write new name in fild:
+        = simple_form_for bookmarks_group do |f|
+          = f.text_field :name, class: 'form-control'
+      .modal-footer
+        = link_to 'Save changes', bookmarks_group_path(bookmarks_group), method: :put, class: 'btn'
+
+

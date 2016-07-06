@@ -2,8 +2,9 @@
   %td
     = link_to bookmarks_group.name, bookmarks_group_path(bookmarks_group)
   %td
+    = link_to 'Edit', "#modal_#{bookmarks_group.id}", class: 'btn btn-xs btn-warning',
+                        data: { toggle: 'modal', target: "#modal_#{bookmarks_group.id}"}
     = link_to 'Delete', bookmarks_group_path(bookmarks_group), method: :delete, class: 'btn btn-xs btn-danger',
                         data: { confirm: "Delete bookmarks group #{bookmarks_group.name}?" }
-    .container
-      = button_to 'Edit', data: {target: '#my_modal', toggle: 'modal'}, class: 'modal'
+=render partial: 'bookmarks_groups/modal', locals: {bookmarks_group: bookmarks_group}
 
