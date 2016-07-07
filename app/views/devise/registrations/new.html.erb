@@ -14,11 +14,11 @@
       <div class='form-group'>
         <% if @minimum_password_length %>
         <% end %>
-        <%= f.password_field :password, autofocus: true, autocomplete: 'off', class: 'form-control', placeholder: 'Password: 8символов минимум'%>
+        <%= f.password_field :password, autofocus: true, autocomplete: 'off', class: 'form-control', placeholder: 'Password'%>
       </div>
 
       <div class='form-group'>
-        <%= f.password_field :password_confirmation,autofocus: true, autocomplete: 'off' , class: 'form-control', placeholder: 'Password: повторите'%>
+        <%= f.password_field :password_confirmation,autofocus: true, autocomplete: 'off' , class: 'form-control', placeholder: 'Password'%>
       </div>
 
       <div class='actions'>

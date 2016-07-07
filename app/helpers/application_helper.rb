@@ -7,4 +7,8 @@ module ApplicationHelper
     when 'alert' then 'alert alert-danger'
     end
   end
+
+  def user_name(user)
+    user.full_name.present? ? user.full_name : user.email
+  end
 end
