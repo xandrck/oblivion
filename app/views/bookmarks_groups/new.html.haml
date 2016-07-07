@@ -1,1 +1,36 @@
-= render partial: 'form'
+.col-md-4.col-md-offset-4
+  .text-center
+    .pick
+      = link_to 'New', '#', class: 'new_group_button'
+      |
+      = link_to 'Upload', '#', class: 'upload_group_button'
+    %h3
+      .new_group
+        New bookmarks group
+      .upload_group
+        Upload from file
+
+  = simple_form_for @bookmarks_group do |f|
+    .new_group
+      .form-group
+        = f.text_field :name, placeholder: :name, class: 'form-control'
+    .upload_group
+      = f.file_field 'file'
+    .form-group.col-md-12
+      .controls.text-center
+        = f.submit 'Create', class: 'btn btn-success'
+
+:javascript
+  $('a.new_group_button').click(function(){
+    $(this).css('font-weight', 'bold');
+    $('.upload_group').hide();
+    $('.btn.btn-success')[0].value = 'Create';
+    $('.upload_group_button').css('font-weight', 'normal');
+  });
+
+  $('a.upload_group_button').click(function(){
+    $(this).css('font-weight', 'bold');
+    $('.upload_group').show();
+    $('.btn.btn-success')[0].value = 'Upload';
+    $('.new_group_button').css('font-weight', 'normal');
+  });
