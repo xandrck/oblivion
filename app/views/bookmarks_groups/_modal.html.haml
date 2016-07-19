@@ -1,0 +1,14 @@
+.modal.fade{ :id => "modal_#{ bookmarks_group.id }" }
+  .modal-dialog
+    .modal-content
+      = simple_form_for bookmarks_group do |f|
+        .modal-header.well
+          .modal-title.text-center.text-primary
+            Edit name of Bookmark Group
+            %button.close{ 'aria-hidden' => 'true', 'data-dismiss' => 'modal', type: 'button' } &times;
+        .modal-body
+          .h4 Please, write new name in field:
+          = f.text_field :name, class: 'form-control '
+        .modal-footer
+          .col-md-7
+            = f.submit 'Update', class: 'btn btn-warning'
