@@ -1,0 +1,10 @@
+%tr
+  %td
+    = link_to bookmark.name, bookmark.href, target: '_blank'
+  %td
+  %td
+    = link_to 'Edit', "#edit_modal_#{ bookmark.id }", class: 'btn btn-xs btn-warning',
+              data: { toggle: 'modal', target: "#edit_modal_#{ bookmark.id }" }
+    = link_to 'Delete', bookmark_path(bookmark), method: :delete, class: 'btn btn-xs btn-danger',
+              data: { confirm: "Delete bookmark #{bookmark.name}?" }
+= render partial: 'common/edit_modal', locals: { obj: bookmark }

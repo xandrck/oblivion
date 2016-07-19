@@ -4,7 +4,8 @@
       .col-md-9
         %ul.nav.navbar-nav
           %li
-            = link_to 'Home', root_path
+            .dropdown
+              = link_to 'Home', root_path, class: 'btn btn-default'
           %li
             .dropdown
               %button.btn.btn-default.dropdown-toggle{ 'type' => 'button', 'id' => 'dropdownMenu1', 'data-toggle' => 'dropdown', 'aria-haspopup' => 'true', 'aria-expanded' => 'true' }
