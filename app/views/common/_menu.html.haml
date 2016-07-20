@@ -1,38 +1,35 @@
-%nav.navbar.navbar-default.navbar-static-top
-  .container
-    .row
-      .col-md-9
-        %ul.nav.navbar-nav
-          %li
-            = link_to 'Home', root_path
-          %li
-            .dropdown
-              %button.btn.btn-default.dropdown-toggle{ 'type' => 'button', 'id' => 'dropdownMenu1', 'data-toggle' => 'dropdown', 'aria-haspopup' => 'true', 'aria-expanded' => 'true' }
-                Bookmarks groups
-                %span.caret
-              %ul.dropdown-menu{ 'aria-labelledby' => 'dropdownMenu3' }
-                %li
-                  = link_to 'Bookmarks groups list', bookmarks_groups_path
-                %li
-                  = link_to 'Add bookmarks group', new_bookmarks_group_path
-          %li
-            .dropdown
-              %button.btn.btn-default.dropdown-toggle{ 'type' => 'button', 'id' => 'dropdownMenu1', 'data-toggle' => 'dropdown' }
-                Bookmarks
-                %span.caret
-              %ul.dropdown-menu{ 'aria-labelledby' => 'dropdownMenu3' }
-                %li
-                  = link_to 'Bookmarks list', bookmarks_path
-                %li
-                  = link_to 'Create bookmark', new_bookmark_path if current_user.bookmarks_groups.present?
-      .col-md-3
-        .dropdown
-          %button.btn.btn-default.dropdown-toggle{ 'type' => 'button', 'id' => 'dropdownMenu1', 'data-toggle' => 'dropdown', 'aria-haspopup' => 'true', 'aria-expanded' => 'true' }
+.navbar.navbar-default.navbar-static
+  .container-fluid
+    .navbar-header
+      = link_to 'Home', root_path, class: 'navbar-brand'
+    .collapse.navbar-collapse.bs-example-js-navbar-collapse
+      %ul.nav.navbar-nav
+        %li.dropdown
+          %a.dropdown-toggle#drop1{ href: '#', role: 'button', 'data-toggle' => 'dropdown' }
+            Bookmarks groups
+            %span.caret
+          %ul.dropdown-menu{ role: 'menu', 'aria-labelledby' => 'drop1' }
+            %li{ role: 'presentation' }
+              = link_to 'Bookmarks groups list', bookmarks_groups_path, html_input: { role: 'menuitem', tabindex: '-1' }
+            %li{ role: 'presentation' }
+              = link_to 'Add bookmarks group', new_bookmarks_group_path, html_input: { role: 'menuitem', tabindex: '-1' }
+        %li.dropdown
+          %a.dropdown-toggle#drop2{ href: '#', role: 'button', 'data-toggle' => 'dropdown' }
+            Bookmarks
+            %span.caret
+          %ul.dropdown-menu{ role: 'menu', 'aria-labelledby' => 'drop2' }
+            %li{ role: 'presentation' }
+              = link_to 'Bookmarks list', bookmarks_path, html_input: { role: 'menuitem', tabindex: '-1' }
+            %li{ role: 'presentation' }
+              = link_to 'Create bookmark', new_bookmark_path, html_input: { role: 'menuitem', tabindex: '-1' } if current_user.bookmarks_groups.present?
+      %ul.nav.navbar-nav.navbar-right
+        %li.dropdown#fat-menu
+          %a.dropdown-toggle#drop3{ href: '#', role: 'button', 'data-toggle' => 'dropdown' }
             = user_name(current_user)
             %span.caret
-          %ul.dropdown-menu{ 'aria-labelledby' => 'dropdownMenu3' }
-            %li
-              = link_to 'Settings', edit_user_path(current_user)
-            %li.divider{ 'role' => 'separator' }
-            %li
-              = link_to 'Log out', destroy_user_session_path, data: { confirm: 'Are you sure want to log out?' }, method: :delete
+          %ul.dropdown-menu{ role: 'menu', 'aria-labelledby' => 'drop3' }
+            %li{ role: 'presentation' }
+              = link_to 'Settings', edit_user_path(current_user), html_input: { role: 'menuitem', tabindex: '-1' }
+            %li.divider{ role: 'presentation' }
+            %li{ role: 'presentation' }
+              = link_to 'Log out', destroy_user_session_path, data: { confirm: 'Are you sure want to log out?' }, method: :delete, html_input: { role: 'menuitem', tabindex: '-1' }
