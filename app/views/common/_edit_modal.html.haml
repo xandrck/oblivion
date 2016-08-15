@@ -1,14 +1,31 @@
 .modal.fade{ id: "edit_modal_#{ obj.id }" }
   .modal-dialog
     .modal-content
-      = simple_form_for obj do |f|
-        .modal-header.well
-          .modal-title.text-center.text-primary
-            Edit name of Bookmark Group
-            %button.close{ 'aria-hidden' => 'true', 'data-dismiss' => 'modal', type: 'button' } &times;
-        .modal-body
-          .h4 Please, write new name in field:
-          = f.text_field :name, class: 'form-control'
-        .modal-footer
-          .col-md-7
-            = f.submit 'Update', class: 'btn btn-warning'
+      #nameBM
+        = simple_form_for obj do |f|
+          .modal-header.well
+            .modal-title.text-center.text-primary
+              Edit name of Bookmark Group
+              %button.close{ 'aria-hidden' => 'true', 'data-dismiss' => 'modal', type: 'button' } &times;
+          .modal-body
+            .h4 Please, write new name in field:
+            = f.text_field :name, class: 'form-control'
+          .modal-footer
+            .col-md-7
+              = f.submit 'Update', class: 'btn btn-warning'
+:javascript
+$(document).ready(function() {
+    $('#nameBM').formValidation({framework: 'bootstrap',excluded: ':disabled',icon: {
+      valid: 'glyphicon glyphicon-ok', invalid: 'glyphicon glyphicon-remove', validating: 'glyphicon glyphicon-refresh'
+      },
+      fields: {
+        name: {
+          validators: {
+            notEmpty: {
+              message: 'Name can not be blank!'
+            }
+          }
+        },
+      }
+  });
+});
